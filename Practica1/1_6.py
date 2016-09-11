@@ -2,6 +2,8 @@
 
 from numpy import linspace
 
+NUM_ITERACIONES = 10
+
 # Primer metodo de suma (xk = xk-1 + h)
 # a, b - Extremos del intervalo a sumar
 # n - numero de elementos menos 1
@@ -25,12 +27,12 @@ def suma2(a, b, n):
         k += 1
     return lista_x
 
-print('Ilustremos la diferencia entre ambos métodos con 10 números en el intervalo [0, 1]')
-lista1 = suma1(0, 1, 10)
-lista2 = suma2(0, 1, 10)
+print('Ilustremos la diferencia entre ambos metodos con 10 numeros en el intervalo [0, 1]')
+lista1 = suma1(0, 1, NUM_ITERACIONES)
+lista2 = suma2(0, 1, NUM_ITERACIONES)
 contador = 0
 for num in lista1:
-    print('Primer método: ' + 'x' + str(contador) + '= ' + str(num))
-    print('Segundo método: ' + 'x' + str(contador) + '= ' + str(lista2[contador]))
+    print('Primer metodo: ' + 'x' + str(contador) + '= ' + str(num))
+    print('Segundo metodo: ' + 'x' + str(contador) + '= ' + str(lista2[contador]))
     print('Diferencia:' + str(num - lista2[contador]))
     contador += 1
