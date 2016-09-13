@@ -38,10 +38,12 @@ def one_pass(v):
     cuadrado *= suma
     return sqrt(cuadrado)
 
-l = [-3, -2, -1, 0, 1, 2, 3, 5]
-#l = [0.1, 0, 0.1, 10000000, 0.1, 0.1, 0.1]
+#l = [-3, -2, -1, 0, 1, 2, 3, 5]
+l = [0.00001, 100000000000000000, 0.000001, 0.000001, 0.00022, 0.01, 0.03, 0.03, 0.05, 0.001]
 print('Vector: ' + str(l))
 print('Media: ' + str(media(l)))
-print('Two pass: ' + str(two_pass(l)))
-print('One pass: ' + str(one_pass(l)))
-print('Diferencia : ' + str(fabs(two_pass(l) - one_pass(l))))
+two = two_pass(l)
+print('Two pass: ' + str(two))
+one = one_pass(l)
+print('One pass: ' + str(one))
+print('Diferencia : ' + str(fabs(two-one)))
