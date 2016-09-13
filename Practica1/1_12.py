@@ -31,16 +31,15 @@ def one_pass(v):
     m = media(v) # La media del vector
     m = pow(m, 2) # Elevamos la media al cuadrado
     suma = 0.0 # Suma utilizada para calcular la desviacion estandar
-    contador = 0 # Número de sumando
     for elem in v:
-        contador += 1
         suma += pow(elem, 2)
-        suma -= contador*m
+    suma -= n*m
     cuadrado = 1.0 / (n-1) # Varianza
     cuadrado *= suma
     return sqrt(cuadrado)
 
-l = [0.1, 0, 0.1, 10000000, 0.1, 0.1, 0.1]
+l = [-3, -2, -1, 0, 1, 2, 3, 5]
+#l = [0.1, 0, 0.1, 10000000, 0.1, 0.1, 0.1]
 print('Vector: ' + str(l))
 print('Media: ' + str(media(l)))
 print('Two pass: ' + str(two_pass(l)))
